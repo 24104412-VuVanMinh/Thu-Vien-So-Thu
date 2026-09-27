@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Thư viện ảnh tương tác - bài tập JavaScript về mouseover, focus, keyboard và tabindex.">
+  <title>Thư viện ảnh tương tác | Cartoon Gallery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar" aria-label="Điều hướng chính">
+      <a class="logo" href="#home" aria-label="Về trang chủ Cartoon Gallery">🎨 Cartoon Gallery</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">☰</button>
+      <ul id="main-menu" class="nav-links">
+        <li><a href="#home">Trang chủ</a></li>
+        <li><a href="#gallery">Thư viện</a></li>
+        <li><a href="#guide">Hướng dẫn</a></li>
+        <li><a href="#about">Giới thiệu</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <span class="eyebrow">JAVASCRIPT • ACCESSIBILITY • INTERACTION</span>
+        <h1 id="hero-title">Thư viện ảnh <span>tương tác</span></h1>
+        <p>Di chuột, dùng Tab, Enter hoặc Space để khám phá sáu hình ảnh. Bài tập có đầy đủ <strong>mouseover, mouseleave, focus, blur, onload, keyboard và tabindex</strong>.</p>
+        <a class="cta" href="#gallery">Khám phá thư viện ↓</a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="floating-card card-one">🦊</div>
+        <div class="floating-card card-two">🐼</div>
+        <div class="floating-card card-three">🐰</div>
+        <div class="hero-orbit"></div>
+      </div>
+    </section>
+
+    <section id="gallery" class="gallery-section" aria-labelledby="gallery-title">
+      <div class="section-heading">
+        <span class="section-label">01 — GALLERY</span>
+        <h2 id="gallery-title">Sáu khoảnh khắc hoạt hình</h2>
+        <p>Rê chuột lên ảnh hoặc dùng bàn phím để kích hoạt hiệu ứng. Khi ảnh được chọn, thông tin sẽ xuất hiện ở khu vực xem trước.</p>
+      </div>
+
+      <div id="gallery-grid" class="gallery-grid">
+        <article class="photo-card" tabindex="0" data-title="Fox Adventure" data-description="Chú cáo nhỏ bắt đầu chuyến phiêu lưu trong khu rừng mùa thu." data-color="orange">
+          <div class="image-wrap">
+            <img src="images/images.jpg" alt="Minh họa chú cáo nhỏ trong khu rừng mùa thu" />
+            <span class="image-number">01</span>
+          </div>
+          <div class="card-info">
+            <span>Forest</span>
+            <h3>Fox Adventure</h3>
+            <p>Phiêu lưu trong rừng</p>
+          </div>
+        </article>
+
+        <article class="photo-card" tabindex="0" data-title="Panda Dream" data-description="Chú gấu trúc thư giãn giữa khu vườn tre xanh mát." data-color="green">
+          <div class="image-wrap">
+            <img src="images/gau truc.jpg" alt="Minh họa gấu trúc đang ngồi giữa vườn tre" />
+            <span class="image-number">02</span>
+          </div>
+          <div class="card-info">
+            <span>Garden</span>
+            <h3>Panda Dream</h3>
+            <p>Ngày bình yên</p>
+          </div>
+        </article>
+
+        <article class="photo-card" tabindex="0" data-title="Rabbit Moon" data-description="Chú thỏ ngắm trăng giữa bầu trời đêm đầy sao." data-color="purple">
+          <div class="image-wrap">
+            <img src="images/tho.jpg" alt="Minh họa chú thỏ trắng ngắm trăng trong đêm" />
+            <span class="image-number">03</span>
+          </div>
+          <div class="card-info">
+            <span>Night</span>
+            <h3>Rabbit Moon</h3>
+            <p>Đêm đầy sao</p>
+          </div>
+        </article>
+
+        <article class="photo-card" tabindex="0" data-title="Bear Café" data-description="Một chú gấu dễ thương đang tận hưởng buổi sáng tại quán cà phê." data-color="brown">
+          <div class="image-wrap">
+            <img src="images/gau nau.jpg" alt="Minh họa chú gấu nâu ngồi uống cà phê" />
+            <span class="image-number">04</span>
+          </div>
+          <div class="card-info">
+            <span>Café</span>
+            <h3>Bear Café</h3>
+            <p>Buổi sáng ấm áp</p>
+          </div>
+        </article>
+
+        <article class="photo-card" tabindex="0" data-title="Cat Sky" data-description="Chú mèo nhỏ nhìn thành phố từ trên sân thượng dưới bầu trời xanh." data-color="blue">
+          <div class="image-wrap">
+            <img src="images/con meo.jpg" alt="Minh họa chú mèo trên sân thượng nhìn bầu trời" />
+            <span class="image-number">05</span>
+          </div>
+          <div class="card-info">
+            <span>City</span>
+            <h3>Cat Sky</h3>
+            <p>Nhìn thành phố</p>
+          </div>
+        </article>
+
+        <article class="photo-card" tabindex="0" data-title="Penguin Sea" data-description="Chú chim cánh cụt khám phá vùng biển băng giá." data-color="cyan">
+          <div class="image-wrap">
+            <img src="images/chim canh cut.jpg" alt="Minh họa chim cánh cụt đứng bên biển băng" />
+            <span class="image-number">06</span>
+          </div>
+          <div class="card-info">
+            <span>Ocean</span>
+            <h3>Penguin Sea</h3>
+            <p>Khám phá đại dương</p>
+          </div>
+        </article>
+      </div>
+
+      <div id="preview" class="preview-panel" aria-live="polite">
+        <div class="preview-icon">✦</div>
+        <div>
+          <span id="preview-label">ĐANG CHỜ TƯƠNG TÁC</span>
+          <h3 id="preview-title">Chọn một hình ảnh</h3>
+          <p id="preview-description">Rê chuột hoặc nhấn Tab để chọn một thẻ ảnh. Nhấn Enter hoặc Space để xem thông tin.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="guide" class="guide-section" aria-labelledby="guide-title">
+      <div class="section-heading">
+        <span class="section-label">02 — HOW IT WORKS</span>
+        <h2 id="guide-title">Các sự kiện JavaScript</h2>
+      </div>
+      <div class="event-grid">
+        <div class="event-item">
+          <div class="event-icon">🖱️</div>
+          <h3>Mouseover</h3>
+          <p>Khi đưa chuột vào thẻ ảnh, thẻ được phóng nhẹ và cập nhật vùng xem trước.</p>
+        </div>
+        <div class="event-item">
+          <div class="event-icon">↔️</div>
+          <h3>Mouseleave</h3>
+          <p>Khi rời chuột khỏi thẻ, trạng thái hover được loại bỏ và giao diện trở lại bình thường.</p>
+        </div>
+        <div class="event-item">
+          <div class="event-icon">⌨️</div>
+          <h3>Focus / Blur</h3>
+          <p>Phím Tab đưa người dùng qua từng ảnh; blur giúp xử lý khi rời khỏi phần tử.</p>
+        </div>
+        <div class="event-item">
+          <div class="event-icon">↵</div>
+          <h3>Keyboard</h3>
+          <p>Enter hoặc Space kích hoạt thẻ ảnh, giúp trang sử dụng được mà không cần chuột.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about-section" aria-labelledby="about-title">
+      <div>
+        <span class="section-label">03 — ACCESSIBILITY</span>
+        <h2 id="about-title">Thiết kế thân thiện với bàn phím</h2>
+        <p>Mỗi ảnh có <code>tabindex="0"</code>, thuộc tính <code>alt</code> mô tả nội dung và các trình nghe sự kiện để người dùng có thể tương tác bằng chuột hoặc bàn phím.</p>
+      </div>
+      <div class="accessibility-box">
+        <div><strong>06</strong><span>Hình ảnh</span></div>
+        <div><strong>0</strong><span>Ảnh thiếu alt</span></div>
+        <div><strong>100%</strong><span>Có thể dùng Tab</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Cartoon Gallery — Bài tập JavaScript tương tác & khả năng tiếp cận.</p>
+    <a href="#home">↑ Về đầu trang</a>
+  </footer>
+
+  <noscript>
+    <div class="noscript">Trang này cần JavaScript để kích hoạt các hiệu ứng tương tác.</div>
+  </noscript>
+
+  <script src="script.js"></script>
+</body>
+</html>
